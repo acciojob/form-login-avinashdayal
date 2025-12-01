@@ -1,10 +1,14 @@
-function getFormvalue(event) {
-    event.preventDefault(); // stops page refresh
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form1');
+  if (!form) return;
 
-    // get form inputs
-    let firstName = document.forms["form1"]["fname"].value;
-    let lastName = document.forms["form1"]["lname"].value;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // event is defined here
+    const first = form.elements['fname'].value.trim();
+    const last  = form.elements['lname'].value.trim();
 
-    // show full name
-    alert( firstName + " " + lastName);
-}
+    // alert the full name exactly as Cypress expects
+    alert(`${first}${last ? ' ' + last : ''}`);
+  });
+});
