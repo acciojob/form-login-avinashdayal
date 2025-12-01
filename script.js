@@ -1,4 +1,4 @@
-ocument.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form1');
   if (!form) return;
 
